@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e06614</color>
+    <color name="colorPrimaryDark">#e06614</color>
+    <color name="colorAccent">#111e3e</color>
+
+    <color name="lightBlue">#10bc9a</color>
+    <color name="darkBlue">#3452c0</color>
+    <color name="green">#17a447</color>
+    <color name="yellow">#f1a604</color>
+
+    <color name="placeholder_grey">#AAADC4</color>
+    <color name="placeholder_grey_20">#33AAADC4</color>
+
+    <color name="lightBlue1">#c826d9b5</color>
+    <color name="darkBlue1">#c904218c</color>
+    <color name="green1">#c8049636</color>
+    <color name="red">#8b1b1d</color>
+    <color name="red_b">#ea070b</color>
+
+    <color name="white">#fff</color>
+
+    <color name="black">#000</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_blue">#85111E3E</color>
+    <color name="transparent_orange">#83E06614</color>
+
+    <color name="text_color_a">#121212</color>
+    <color name="text_color_b">#212121</color>
+    <color name="text_color_c">#333333</color>
+    <color name="text_color_d">#454444</color>
+
+    <color name="gray_a">#585757</color>
+    <color name="gray_b">#696868</color>
+    <color name="gray_c">#7b7a7a</color>
+    <color name="gray_d">#919090</color>
+    <color name="gray_e">#aeadad</color>
+    <color name="gray_f">#cacaca</color>
+    <color name="gray_g">#dadada</color>
+    <color name="gray_h">#e6e5e5</color>
+    <color name="gray_i">#f2f0f0</color>
+    <color name="gray_j">#f7f7f7</color>
+</resources>

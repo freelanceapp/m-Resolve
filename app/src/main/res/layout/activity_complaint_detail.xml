@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Complaint Detail"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="We Care For You !"
+                    android:textColor="@color/text_color_a"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:text="Complaint Id"
+                    android:textColor="@color/text_color_a"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtComplaintId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/layout_background_b"
+                    android:padding="8dp"
+                    android:textColor="@color/text_color_a" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Complaint Date"
+                    android:textColor="@color/text_color_a"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtComplaintDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/layout_background_b"
+                    android:padding="8dp"
+                    android:textColor="@color/text_color_a" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Complaint Category"
+                    android:textColor="@color/text_color_a"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtComplaintCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/layout_background_b"
+                    android:padding="8dp"
+                    android:textColor="@color/text_color_a" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Complaint Sub Category"
+                    android:textColor="@color/text_color_a"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtComplaintSubCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/layout_background_b"
+                    android:padding="8dp"
+                    android:textColor="@color/text_color_a" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Complaint Details"
+                android:textColor="@color/text_color_a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtComplaintDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/layout_background_b"
+                android:padding="8dp"
+                android:textColor="@color/text_color_a" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Contact No."
+                android:textColor="@color/text_color_a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtComplaintContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/layout_background_b"
+                android:padding="8dp"
+                android:textColor="@color/text_color_a" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Complaint Status"
+                android:textColor="@color/text_color_a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtComplaintStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/layout_background_b"
+                android:drawableEnd="@drawable/ic_status_c"
+                android:padding="8dp"
+                android:textColor="@color/text_color_a" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Complaint Status Date"
+                android:textColor="@color/text_color_a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtStatusDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/layout_background_b"
+                android:padding="8dp"
+                android:textColor="@color/text_color_a" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Complaint Assigned To"
+                android:textColor="@color/text_color_a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtAssignedTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/layout_background_b"
+                android:padding="8dp"
+                android:textColor="@color/text_color_a" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_trans_blue"
+                    android:text="Back"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btnFeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_trans_orange"
+                    android:text="Feedback"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
