@@ -64,7 +64,7 @@ public class FeedbackActivity extends BaseActivity implements View.OnClickListen
     }
 
     private void submitFeedbackApi() {
-        String empId = User.getUser().getEMPNAME();
+        String empId = User.getUser().getId();
         String strComment = ((EditText) findViewById(R.id.edtComment)).getText().toString();
 
         int intRating = (int) feedbackRating;

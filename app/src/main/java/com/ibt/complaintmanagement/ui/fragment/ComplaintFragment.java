@@ -152,7 +152,7 @@ public class ComplaintFragment extends BaseFragment implements View.OnClickListe
 
     private void submitComplaintApi() {
         String empId = User.getUser().getId();
-        String empName = User.getUser().getEMP();
+        String empName = User.getUser().getEMPNAME();
         String strContact = ((EditText) rootView.findViewById(R.id.edtContact)).getText().toString();
         String strDescription = ((EditText) rootView.findViewById(R.id.edtDescription)).getText().toString();
 
