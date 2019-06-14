@@ -31,7 +31,7 @@
             android:name=".ui.activities.MainActivity"
             android:label="" />
         <activity android:name=".ui.activities.LoginActivity" />
-        <activity android:name=".ui.activities.SetPasswordActivity" />
+        <activity android:name=".ui.fragment.SetPasswordFragment" />
         <activity android:name=".ui.activities.ForgotPasswordActivity" />
         <activity android:name=".ui.activities.ComplaintDetailActivity" />
         <activity android:name=".ui.activities.FeedbackActivity" />

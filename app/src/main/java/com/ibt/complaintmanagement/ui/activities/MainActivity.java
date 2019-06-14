@@ -18,14 +18,17 @@ import android.widget.TextView;
 import com.ibt.complaintmanagement.R;
 import com.ibt.complaintmanagement.constant.Constant;
 import com.ibt.complaintmanagement.modal.User;
+import com.ibt.complaintmanagement.pagination_listener.ComplaintListener;
+import com.ibt.complaintmanagement.pagination_listener.PasswordUpdateListener;
 import com.ibt.complaintmanagement.ui.fragment.ComplaintFragment;
 import com.ibt.complaintmanagement.ui.fragment.HomeFragment;
+import com.ibt.complaintmanagement.ui.fragment.SetPasswordFragment;
 import com.ibt.complaintmanagement.ui.fragment.StatusFragment;
 import com.ibt.complaintmanagement.utils.AppPreference;
 import com.ibt.complaintmanagement.utils.BaseActivity;
 import com.ibt.complaintmanagement.utils.FragmentUtils;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, PasswordUpdateListener, ComplaintListener {
 
     private View contentView;
     private DrawerLayout drawerLayout;
@@ -50,6 +53,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.llHome).setOnClickListener(this);
         findViewById(R.id.llComplaint).setOnClickListener(this);
         findViewById(R.id.llStatus).setOnClickListener(this);
+        findViewById(R.id.llPassword).setOnClickListener(this);
         findViewById(R.id.llLogout).setOnClickListener(this);
 
         toolbar = findViewById(R.id.toolbar);
@@ -105,7 +109,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         drawerLayout.closeDrawer(GravityCompat.START);
         txtTitle.setText("Home");
-        fragmentUtils.replaceFragment(new HomeFragment(), Constant.HomeFragment, R.id.frameLayout);
+        HomeFragment homeFragment = new HomeFragment();
+        homeFragment.initListener(this);
+        fragmentUtils.replaceFragment(homeFragment, Constant.HomeFragment, R.id.frameLayout);
     }
 
     @Override
@@ -118,10 +124,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 ((ImageView) findViewById(R.id.imgHome)).setImageResource(R.drawable.ic_home);
                 ((ImageView) findViewById(R.id.imgComplaint)).setImageResource(R.drawable.ic_complaint_b);
                 ((ImageView) findViewById(R.id.imgStatus)).setImageResource(R.drawable.ic_status);
+                ((ImageView) findViewById(R.id.imgPassword)).setImageResource(R.drawable.ic_lock);
 
                 ((TextView) findViewById(R.id.txtHome)).setTextColor(getResources().getColor(R.color.text_color_a));
                 ((TextView) findViewById(R.id.txtComplaint)).setTextColor(getResources().getColor(R.color.colorPrimary));
                 ((TextView) findViewById(R.id.txtStatus)).setTextColor(getResources().getColor(R.color.text_color_a));
+                ((TextView) findViewById(R.id.txtPassword)).setTextColor(getResources().getColor(R.color.text_color_a));
 
                 drawerLayout.closeDrawer(GravityCompat.START);
                 txtTitle.setText("File ComplaintList");
@@ -131,14 +139,33 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 ((ImageView) findViewById(R.id.imgHome)).setImageResource(R.drawable.ic_home);
                 ((ImageView) findViewById(R.id.imgComplaint)).setImageResource(R.drawable.ic_complaint);
                 ((ImageView) findViewById(R.id.imgStatus)).setImageResource(R.drawable.ic_status_b);
+                ((ImageView) findViewById(R.id.imgPassword)).setImageResource(R.drawable.ic_lock);
 
                 ((TextView) findViewById(R.id.txtHome)).setTextColor(getResources().getColor(R.color.text_color_a));
                 ((TextView) findViewById(R.id.txtComplaint)).setTextColor(getResources().getColor(R.color.text_color_a));
+                ((TextView) findViewById(R.id.txtPassword)).setTextColor(getResources().getColor(R.color.text_color_a));
                 ((TextView) findViewById(R.id.txtStatus)).setTextColor(getResources().getColor(R.color.colorPrimary));
 
                 drawerLayout.closeDrawer(GravityCompat.START);
                 txtTitle.setText("Check Status");
                 fragmentUtils.replaceFragment(new StatusFragment(), Constant.StatusFragment, R.id.frameLayout);
+                break;
+            case R.id.llPassword:
+                ((ImageView) findViewById(R.id.imgHome)).setImageResource(R.drawable.ic_home);
+                ((ImageView) findViewById(R.id.imgComplaint)).setImageResource(R.drawable.ic_complaint);
+                ((ImageView) findViewById(R.id.imgStatus)).setImageResource(R.drawable.ic_status);
+                ((ImageView) findViewById(R.id.imgPassword)).setImageResource(R.drawable.ic_lock_b);
+
+                ((TextView) findViewById(R.id.txtHome)).setTextColor(getResources().getColor(R.color.text_color_a));
+                ((TextView) findViewById(R.id.txtComplaint)).setTextColor(getResources().getColor(R.color.text_color_a));
+                ((TextView) findViewById(R.id.txtStatus)).setTextColor(getResources().getColor(R.color.text_color_a));
+                ((TextView) findViewById(R.id.txtPassword)).setTextColor(getResources().getColor(R.color.colorPrimary));
+
+                drawerLayout.closeDrawer(GravityCompat.START);
+                txtTitle.setText("Update Password");
+                SetPasswordFragment passwordFragment = new SetPasswordFragment();
+                passwordFragment.initListener(this);
+                fragmentUtils.replaceFragment(passwordFragment, Constant.SetPasswordFragment, R.id.frameLayout);
                 break;
             case R.id.llLogout:
                 logout();
@@ -168,4 +195,27 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 .show();
     }
 
+    @Override
+    public void onSuccess(Boolean isUpdate) {
+        initFragment();
+    }
+
+    @Override
+    public void onComplaint(Boolean isUpdate) {
+        if (isUpdate) {
+            ((ImageView) findViewById(R.id.imgHome)).setImageResource(R.drawable.ic_home);
+            ((ImageView) findViewById(R.id.imgComplaint)).setImageResource(R.drawable.ic_complaint_b);
+            ((ImageView) findViewById(R.id.imgStatus)).setImageResource(R.drawable.ic_status);
+            ((ImageView) findViewById(R.id.imgPassword)).setImageResource(R.drawable.ic_lock);
+
+            ((TextView) findViewById(R.id.txtHome)).setTextColor(getResources().getColor(R.color.text_color_a));
+            ((TextView) findViewById(R.id.txtComplaint)).setTextColor(getResources().getColor(R.color.colorPrimary));
+            ((TextView) findViewById(R.id.txtStatus)).setTextColor(getResources().getColor(R.color.text_color_a));
+            ((TextView) findViewById(R.id.txtPassword)).setTextColor(getResources().getColor(R.color.text_color_a));
+
+            drawerLayout.closeDrawer(GravityCompat.START);
+            txtTitle.setText("File ComplaintList");
+            fragmentUtils.replaceFragment(new ComplaintFragment(), Constant.ComplaintFragment, R.id.frameLayout);
+        }
+    }
 }

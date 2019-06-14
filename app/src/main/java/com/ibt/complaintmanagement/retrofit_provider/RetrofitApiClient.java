@@ -44,4 +44,9 @@ public interface RetrofitApiClient {
     @POST(Constant.SUBMIT_FEEDBACK)
     Call<ResponseBody> submitFeedback(@Field("emp") String emp, @Field("comp_id") String comp_id,
                                       @Field("feedback") String feedback, @Field("comment") String comment);
+
+    @FormUrlEncoded
+    @POST(Constant.CHANGE_PASSWORD)
+    Call<ResponseBody> changePassword(@Field("emp") String emp, @Field("old_password") String old_password,
+                                      @Field("new_password") String new_password);
 }

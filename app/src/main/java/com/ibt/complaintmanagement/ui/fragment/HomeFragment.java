@@ -14,6 +14,7 @@ import com.ibt.complaintmanagement.R;
 import com.ibt.complaintmanagement.adapter.ComplaintListAdapter;
 import com.ibt.complaintmanagement.modal.User;
 import com.ibt.complaintmanagement.modal.complaint_list.ComplaintMainModal;
+import com.ibt.complaintmanagement.pagination_listener.ComplaintListener;
 import com.ibt.complaintmanagement.pagination_listener.PaginationScrollListener;
 import com.ibt.complaintmanagement.retrofit_provider.RetrofitService;
 import com.ibt.complaintmanagement.retrofit_provider.WebResponse;
@@ -37,6 +38,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private boolean isLoading = false;
     private boolean isLastPage = false;
 
+    private ComplaintListener complaintListener;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +53,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         return rootView;
     }
 
+    public void initListener(ComplaintListener complaintListener) {
+        this.complaintListener = complaintListener;
+    }
+
     private void init() {
 
         swipeRefresh = rootView.findViewById(R.id.swipeRefresh);
+        rootView.findViewById(R.id.btnComplaint).setOnClickListener(this);
 
         RecyclerView recyclerViewComplaint = rootView.findViewById(R.id.recyclerViewComplaint);
         cd = new ConnectionDetector(mContext);
@@ -127,6 +135,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                         }
                     }
                     adapter.notifyDataSetChanged();
+
+                    if (adapter.getTripList().size() > 0) {
+                        swipeRefresh.setVisibility(View.VISIBLE);
+                        rootView.findViewById(R.id.llNoComplaint).setVisibility(View.GONE);
+                    } else {
+                        swipeRefresh.setVisibility(View.GONE);
+                        rootView.findViewById(R.id.llNoComplaint).setVisibility(View.VISIBLE);
+                    }
                 }
 
                 @Override
@@ -160,6 +176,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                             Alerts.show(mContext, result.message());
                         }
                     }
+                    if (adapter.getTripList().size() > 0) {
+                        swipeRefresh.setVisibility(View.VISIBLE);
+                        rootView.findViewById(R.id.llNoComplaint).setVisibility(View.GONE);
+                    } else {
+                        swipeRefresh.setVisibility(View.GONE);
+                        rootView.findViewById(R.id.llNoComplaint).setVisibility(View.VISIBLE);
+                    }
                 }
 
                 @Override
@@ -174,6 +197,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.btnComplaint:
+                complaintListener.onComplaint(true);
+                break;
+        }
     }
 }

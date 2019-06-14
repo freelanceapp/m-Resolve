@@ -1,7 +1,8 @@
 package com.ibt.complaintmanagement.constant;
 
 public class Constant {
-    public static final String BASE_URL = "http://ec2-13-233-148-216.ap-south-1.compute.amazonaws.com/complaint/api/";
+    //public static final String BASE_URL = "http://ec2-13-233-148-216.ap-south-1.compute.amazonaws.com/complaint/api/";
+    public static final String BASE_URL = "http://mresolve.sgtechs.in/api/";
     public static final String VERSION = "check-version.php";
     public static final String LOGIN = "user-login.php";
     public static final String FORGOT_PASSWORD = "user-forget-password.php";
@@ -9,6 +10,7 @@ public class Constant {
     public static final String SUBMIT_COMPLAINT = "submit-complaint.php";
     public static final String GET_COMPLAINT = "get-complaint.php";
     public static final String SUBMIT_FEEDBACK = "submit-feedback.php";
+    public static final String CHANGE_PASSWORD = "change_password.php";
 
     //Preference
     public static final String IS_LOGIN = "IS_LOGIN";
@@ -18,4 +20,5 @@ public class Constant {
     public static String HomeFragment = "HomeFragment";
     public static String ComplaintFragment = "ComplaintFragment";
     public static String StatusFragment = "StatusFragment";
+    public static String SetPasswordFragment = "SetPasswordFragment";
 }
